@@ -1,0 +1,25 @@
+---
+const {title} = Astro.params
+import { ViewTransitions } from 'astro:transitions';
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+        <meta name="description" content="Plan your adventure...">
+		<title>Astro 🚀</title>
+	</head>
+	<body data-theme="lofi">
+		<slot />
+	</body>
+</html>
+
+<ViewTransitions />
+
+<style is:global>
+	.btn {
+		@apply rounded-md ;
+	}
+</style>
