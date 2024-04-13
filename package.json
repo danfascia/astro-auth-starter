@@ -10,8 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.20.4",
     "@astrojs/check": "^0.5.10",
-    "@astrojs/db": "^0.10.2",
+    "@astrojs/db": "^0.10.4",
     "@astrojs/tailwind": "^5.1.0",
     "@tailwindcss/typography": "^0.5.12",
     "astro": "^4.5.17",

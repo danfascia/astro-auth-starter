@@ -5,12 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@anthropic-ai/sdk':
+    specifier: ^0.20.4
+    version: 0.20.4
   '@astrojs/check':
     specifier: ^0.5.10
     version: 0.5.10(typescript@5.4.4)
   '@astrojs/db':
-    specifier: ^0.10.2
-    version: 0.10.2
+    specifier: ^0.10.4
+    version: 0.10.4
   '@astrojs/tailwind':
     specifier: ^5.1.0
     version: 5.1.0(astro@4.5.17)(tailwindcss@3.4.3)
@@ -37,7 +40,7 @@ dependencies:
     version: 3.1.1
   lucia-adapter-astrodb:
     specifier: ^0.0.8
-    version: 0.0.8(@astrojs/db@0.10.2)(lucia@3.1.1)
+    version: 0.0.8(@astrojs/db@0.10.4)(lucia@3.1.1)
   oslo:
     specifier: ^1.2.0
     version: 1.2.0
@@ -74,6 +77,21 @@ packages:
     resolution: {integrity: sha512-gFPqTG7otEJ8uP6wrhDv6mqwGWYZKNvAcCq6u9hOj0c+IKCEsY4L1oC9trPq2SaWIzAfHvqfBDxF591JkMf+kg==}
     dev: false
 
+  /@anthropic-ai/sdk@0.20.4:
+    resolution: {integrity: sha512-ULzz+0Smk9SNkAi1tcjJByxbt4taBhnQkRAB75iH0ku5dRwiPxGxN0WOWHoNIq22dGWBXJByrQRhVf80V4xAPA==}
+    dependencies:
+      '@types/node': 18.19.31
+      '@types/node-fetch': 2.6.11
+      abort-controller: 3.0.0
+      agentkeepalive: 4.5.0
+      form-data-encoder: 1.7.2
+      formdata-node: 4.4.1
+      node-fetch: 2.7.0
+      web-streams-polyfill: 3.3.3
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
   /@astrojs/check@0.5.10(typescript@5.4.4):
     resolution: {integrity: sha512-vliHXM9cu/viGeKiksUM4mXfO816ohWtawTl2ADPgTsd4nUMjFiyAl7xFZhF34yy4hq4qf7jvK1F2PlR3b5I5w==}
     hasBin: true
@@ -95,8 +113,8 @@ packages:
     resolution: {integrity: sha512-/POejAYuj8WEw7ZI0J8JBvevjfp9jQ9Wmu/Bg52RiNwGXkMV7JnYpsenVfHvvf1G7R5sXHGKlTcxlQWhoUTiGQ==}
     dev: false
 
-  /@astrojs/db@0.10.2:
-    resolution: {integrity: sha512-822+vkEKaruLuc1leCOW8/5/UjhmgR2/0MSEgf3gSrf1k20mWyXw8+4maR6ER6ZLBxczcjvxpQl3Q6Z50BakLA==}
+  /@astrojs/db@0.10.4:
+    resolution: {integrity: sha512-6A7UQPZZ4wQuA7JuhZ5N2/aqOECLj62+mjLC1iRFVkUTXpU251hKrZubAt0BqOdvNTuei8DNxSWuK+krFkngzA==}
     dependencies:
       '@libsql/client': 0.5.6
       async-listen: 3.0.1
@@ -1967,6 +1985,12 @@ packages:
       form-data: 4.0.0
     dev: false
 
+  /@types/node@18.19.31:
+    resolution: {integrity: sha512-ArgCD39YpyyrtFKIqMDvjz79jto5fcI/SVUs2HwB+f0dAzq68yqOdyaSivLiLugSziTpNXLQrVb7RZFmdZzbhA==}
+    dependencies:
+      undici-types: 5.26.5
+    dev: false
+
   /@types/node@20.12.6:
     resolution: {integrity: sha512-3KurE8taB8GCvZBPngVbp0lk5CKi8M9f9k1rsADh0Evdz5SzJ+Q+Hx9uHoFGsLnLnd1xmkDQr2hVhlA0Mn0lKQ==}
     dependencies:
@@ -2088,10 +2112,24 @@ packages:
     resolution: {integrity: sha512-KYSIHVmslkaCDyw013pphY+d7x1qV8IZupYfeIfzNA+nsaWHbn5uPuQRvdRFsa9zFzGeudPuoGoZ1Op4jrJXIQ==}
     dev: false
 
+  /abort-controller@3.0.0:
+    resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
+    engines: {node: '>=6.5'}
+    dependencies:
+      event-target-shim: 5.0.1
+    dev: false
+
   /acorn@8.11.3:
     resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+    dev: false
+
+  /agentkeepalive@4.5.0:
+    resolution: {integrity: sha512-5GG/5IbQQpC9FpkRGsSvZI5QYeSCzlJHdpBQntCsuTOxhKD8lqKhrleg2Yi7yvMIf82Ycmmqln9U8V9qwEiJew==}
+    engines: {node: '>= 8.0.0'}
+    dependencies:
+      humanize-ms: 1.2.1
     dev: false
 
   /ansi-align@3.0.1:
@@ -3100,6 +3138,11 @@ packages:
       '@types/estree': 1.0.5
     dev: false
 
+  /event-target-shim@5.0.1:
+    resolution: {integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==}
+    engines: {node: '>=6'}
+    dev: false
+
   /eventemitter3@5.0.1:
     resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
     dev: false
@@ -3260,6 +3303,10 @@ packages:
       signal-exit: 4.1.0
     dev: false
 
+  /form-data-encoder@1.7.2:
+    resolution: {integrity: sha512-qfqtYan3rxrnCk1VYaA4H+Ms9xdpPqvLZa6xmMgFvhO32x7/3J/ExcTd6qpxM0vH2GdMI+poehyBZvqfMTto8A==}
+    dev: false
+
   /form-data@4.0.0:
     resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
     engines: {node: '>= 6'}
@@ -3267,6 +3314,14 @@ packages:
       asynckit: 0.4.0
       combined-stream: 1.0.8
       mime-types: 2.1.35
+    dev: false
+
+  /formdata-node@4.4.1:
+    resolution: {integrity: sha512-0iirZp3uVDjVGt9p49aTaqjk84TrglENEDuqfdlZQ1roC9CWlPk6Avf8EEnZNcAqPonwkG35x4n3ww/1THYAeQ==}
+    engines: {node: '>= 12.20'}
+    dependencies:
+      node-domexception: 1.0.0
+      web-streams-polyfill: 4.0.0-beta.3
     dev: false
 
   /formdata-polyfill@4.0.10:
@@ -3551,6 +3606,12 @@ packages:
   /human-signals@5.0.0:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
+    dev: false
+
+  /humanize-ms@1.2.1:
+    resolution: {integrity: sha512-Fl70vYtsAFb/C06PTS9dZBo7ihau+Tu/DNCk/OyHhea07S+aeMWpFFkUaXRa8fI+ScZbEI8dfSxwY7gxZ9SAVQ==}
+    dependencies:
+      ms: 2.1.2
     dev: false
 
   /ieee754@1.2.1:
@@ -3853,13 +3914,13 @@ packages:
       yallist: 4.0.0
     dev: false
 
-  /lucia-adapter-astrodb@0.0.8(@astrojs/db@0.10.2)(lucia@3.1.1):
+  /lucia-adapter-astrodb@0.0.8(@astrojs/db@0.10.4)(lucia@3.1.1):
     resolution: {integrity: sha512-MfKRu/ndyGXQ+A1f+12a5XTFs3LHFDLHCzqwCkuPQxAbX0ZldRj1O42bBYIc7NFqmB+Wu9agFvFRQXS8jkJyDw==}
     peerDependencies:
       '@astrojs/db': 0.8 - 0.10
       lucia: 3.x
     dependencies:
-      '@astrojs/db': 0.10.2
+      '@astrojs/db': 0.10.4
       lucia: 3.1.1
     dev: false
 
@@ -5938,6 +5999,11 @@ packages:
   /web-streams-polyfill@3.3.3:
     resolution: {integrity: sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw==}
     engines: {node: '>= 8'}
+    dev: false
+
+  /web-streams-polyfill@4.0.0-beta.3:
+    resolution: {integrity: sha512-QW95TCTaHmsYfHDybGMwO5IJIM93I/6vTRk+daHTWFPhwh+C8Cg7j7XyKrwrj8Ib6vYXe0ocYNrmzY4xAAN6ug==}
+    engines: {node: '>= 14'}
     dev: false
 
   /webidl-conversions@3.0.1:
